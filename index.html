@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SHIVQUOTES_90</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<style>
+:root{
+  --bg:#0b0b0f;
+  --card:#14141c;
+  --txt:#e8e8ef;
+  --muted:#a7a7bd;
+  --accent:#7c5cff;
+  --accent2:#18d3a7;
+  --danger:#ff5c7c;
+  --gold:#f8d24a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b0b0f 0%, #111424 100%);color:var(--txt);font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;}
+a{color:var(--accent);text-decoration:none;}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(11,11,15,0.7);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.wrap{max-width:900px;margin:0 auto;padding:16px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.logo{
+  width:42px;height:42px;border-radius:10px;
+  background:conic-gradient(from 210deg, var(--accent), var(--accent2), var(--accent));
+  box-shadow:0 6px 24px rgba(124,92,255,0.35), inset 0 0 16px rgba(255,255,255,0.1);
+}
+.title{font-weight:800;letter-spacing:0.5px;}
+.subtitle{color:var(--muted);font-size:13px;}
+.clock{
+  font-variant-numeric:tabular-nums;
+  font-weight:700;
+  font-size:28px;
+  padding:10px 14px;
+  border-radius:10px;
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+main{padding:24px 0;}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr;}}
+.card{
+  background:var(--card);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+.card h3{margin:0 0 8px 0;}
+.muted{color:var(--muted);font-size:14px;}
+.btn{
+  appearance:none;border:0;cursor:pointer;
+  padding:12px 16px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#5a3dff);
+  color:white;font-weight:700;letter-spacing:0.2px;
+  transition: transform 0.2s ease;
+}
+.btn:disabled{opacity:0.6;cursor:not-allowed;filter:grayscale(0.3);}
+.btn:hover:not(:disabled){transform:scale(1.05);}
+.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  font-size:13px;color:var(--muted)
+}
+.exp{
+  font-size:24px;font-weight:800;color:var(--gold);
+  text-shadow:0 0 10px rgba(248,210,74,0.35);
+}
+.streak{font-size:16px;font-weight:700;color:var(--accent2);}
+footer{padding:28px 0;color:var(--muted);font-size:13px;}
+.divider{height:1px;background:rgba(255,255,255,0.06);margin:14px 0;}
+.hint{font-size:12px;color:var(--muted);}
+.success{color:var(--accent2);}
+.error{color:var(--danger);}
+.progress{
+  height:10px;background:rgba(255,255,255,0.06);
+  border-radius:999px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);
+}
+.bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent2),#55e6bf);transition:width 0.5s ease;}
+.quote-box{
+  padding:12px;background:rgba(255,255,255,0.05);border-radius:10px;margin-top:12px;font-style:italic;text-align:center;font-size:15px;
+}
+.suggestion-box{margin-top:12px;}
+.suggestion-box input, .suggestion-box textarea{
+  width:100%;padding:8px;margin:4px 0;border-radius:8px;border:1px solid rgba(255,255,255,0.2);background:var(--card);color:var(--txt);
+}
+.suggestion-box button{margin-top:4px;width:100%;}
+.suggestion-item{margin:6px 0;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px;}
+.float-follow{
+  position:fixed;bottom:16px;right:16px;
+  background:var(--accent2);padding:12px 16px;border-radius:14px;
+  color:#111;font-weight:700;text-decoration:none;
+  box-shadow:0 6px 20px rgba(0,0,0,0.3);
+  animation:floatPulse 2s infinite;
+  z-index:20;
+}
+@keyframes floatPulse{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.welcome-overlay{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(11,11,15,0.95);display:flex;align-items:center;justify-content:center;
+  color:var(--accent2);font-size:28px;font-weight:800;flex-direction:column;z-index:50;
+  animation:fadeIn 1s forwards;
+}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes fadeOut{from{opacity:1;}to{opacity:0;}}
+</style>
+</head>
+<body>
+
+<div class="welcome-overlay" id="welcomeOverlay">Welcome to SHIVQUOTES_90 ✨</div>
+
+<header>
+  <div class="wrap row" style="justify-content:space-between;">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <div class="title">SHIVQUOTES_90</div>
+        <div class="subtitle">Quotes • Bhakti • Vibes</div>
+      </div>
+    </div>
+    <div class="clock" id="clock" aria-live="polite">--:--:--</div>
+  </div>
+</header>
+
+<div class="wrap">
+<main class="grid">
+  <!-- Daily EXP Prize -->
+  <section class="card">
+    <h3>Guest daily EXP prize</h3>
+    <p class="muted">Claim once per day as a guest; resets every midnight based on device time.</p>
+    <div class="divider"></div>
+    <div class="row" style="justify-content:space-between">
+      <div>
+        <div class="muted">Current EXP</div>
+        <div class="exp" id="expTotal">0</div>
+        <div class="streak" id="streakDisplay">🔥 Streak: 0</div>
+      </div>
+      <button id="claimBtn" class="btn">Claim today’s prize</button>
+    </div>
+    <div class="divider"></div>
+    <div class="row" style="justify-content:space-between">
+      <span class="badge" id="statusBadge">Not claimed</span>
+      <span class="hint" id="nextReset">Resets at local midnight</span>
+    </div>
+    <div style="margin-top:12px">
+      <div class="progress"><div id="dailyBar" class="bar"></div></div>
+      <div class="quote-box" id="quoteBox">Click claim to get today's quote.</div>
+      <div class="hint" id="visitorCount">Visitors today: 0</div>
+    </div>
+  </section>
+
+  <!-- Suggestion Box -->
+  <section class="card">
+    <h3>Share Your Suggestions</h3>
+    <div class="suggestion-box">
+      <textarea id="suggestionInput" placeholder="Type your suggestion here..."></textarea>
+      <button id="submitSuggestion" class="btn">Submit</button>
+    </div>
+    <div id="suggestionList" style="margin-top:8px;"></div>
+  </section>
+</main>
+
+<footer class="row" style="justify-content:space-between">
+  <div>© <span id="year"></span> SHIVQUOTES_90</div>
+  <div class="hint">Built as a single HTML file.</div>
+</footer>
+</div>
+
+<a href="https://sharechat.com/profile/shvqts?d=n" target="_blank" class="float-follow">Follow us ❤️</a>
+
+<script>
+// ===== Helpers =====
+const to2 = n => n.toString().padStart(2,'0');
+const todayKey = () => {const d=new Date();return `${d.getFullYear()}-${to2(d.getMonth()+1)}-${to2(d.getDate())}`};
+const msUntilMidnight = () => {const now=new Date();const midnight=new Date(now);midnight.setHours(24,0,0,0);return midnight-now;};
+
+// ===== Clock =====
+function startClock(){const el=document.getElementById('clock');const tick=()=>{const d=new Date();el.textContent=`${to2(d.getHours())}:${to2(d.getMinutes())}:${to2(d.getSeconds())}`};tick();setInterval(tick,1000);}
+
+// ===== Storage =====
+const LS_KEYS={
+  expTotal:'sq90_exp_total',
+  lastClaimDate:'sq90_last_claim_date',
+  lastClaimAmount:'sq90_last_claim_amount',
+  streak:'sq90_streak',
+  suggestions:'sq90_suggestions',
+  visitorData:'sq90_visitors'
+};
+
+// ===== Random Quotes =====
+const QUOTES=[
+  "The mind is everything. What you think, you become.",
+  "Peace comes from within. Do not seek it without.",
+  "Every morning we are born again. What we do today matters most.",
+  "Do small things with great love.",
+  "Let go of the past to embrace today.",
+  "Bhakti is the bridge to inner peace.",
+  "Happiness is a journey, not a destination."
+];
+
+// ===== Visitor Count =====
+function updateVisitorCount(){
+  const data=JSON.parse(localStorage.getItem(LS_KEYS.visitorData)||'{}');
+  const today=todayKey();
+  data[today]=data[today]?data[today]+1:1;
+  localStorage.setItem(LS_KEYS.visitorData,JSON.stringify(data));
+  document.getElementById('visitorCount').textContent=`Visitors today: ${data[today]}`;
+}
+
+// ===== EXP & UI =====
+function getExpTotal(){return parseInt(localStorage.getItem(LS_KEYS.expTotal)||'0',10);}
+function setExpTotal(v){localStorage.setItem(LS_KEYS.expTotal,String(v));}
+function getLastClaimDate(){return localStorage.getItem(LS_KEYS.lastClaimDate)||'';}
+function setLastClaimDate(d){localStorage.setItem(LS_KEYS.lastClaimDate,d);}
+function setLastClaimAmount(n){localStorage.setItem(LS_KEYS.lastClaimAmount,String(n));}
+function getLastClaimAmount(){return parseInt(localStorage.getItem(LS_KEYS.lastClaimAmount)||'0',10);}
+function getStreak(){return parseInt(localStorage.getItem(LS_KEYS.streak)||'0',10);}
+function setStreak(n){localStorage.setItem(LS_KEYS.streak,String(n));}
+function getSuggestions(){return JSON.parse(localStorage.getItem(LS_KEYS.suggestions)||'[]');}
+function addSuggestion(text){const arr=getSuggestions();arr.push(text);localStorage.setItem(LS_KEYS.suggestions,JSON.stringify(arr));}
+
+function updateUI(){
+  document.getElementById('expTotal').textContent=getExpTotal();
+  document.getElementById('streakDisplay').textContent=`🔥 Streak: ${getStreak()}`;
+  
+  const claimedToday=getLastClaimDate()===todayKey();
+  const claimBtn=document.getElementById('claimBtn');
+  const badge=document.getElementById('statusBadge');
+  const dailyBar=document.getElementById('dailyBar');
+  const quoteBox=document.getElementById('quoteBox');
+  
+  if(claimedToday){
+    claimBtn.disabled=true;
+    badge.textContent=`Claimed: +${getLastClaimAmount()} EXP`;
+    badge.className='badge success';
+  }else{
+    claimBtn.disabled=false;
+    badge.textContent='Not claimed';
+    badge.className='badge';
+    quoteBox.textContent="Click claim to get today's quote.";
+  }
+
+  // Progress bar
+  const now=new Date();
+  const startOfDay=new Date(now);startOfDay.setHours(0,0,0,0);
+  const pct=Math.max(0, Math.min(100,(now-startOfDay)/86400000*100));
+  dailyBar.style.width=pct.toFixed(1)+'%';
+
+  // Suggestions
+  const sugList=document.getElementById('suggestionList');
+  const arr=getSuggestions();
+  sugList.innerHTML='';
+  arr.forEach((s,i)=>{const div=document.createElement('div');div.className='suggestion-item';div.textContent=`${i+1}. ${s}`;sugList.appendChild(div)});
+}
+
+// ===== Claim =====
+function claimToday(){
+  if(getLastClaimDate()===todayKey()) return;
+  const exp=Math.floor(Math.random()*21)+5;
+  setExpTotal(getExpTotal()+exp);
+  setLastClaimDate(todayKey());
+  setLastClaimAmount(exp);
+
+  // Streak logic
+  const lastDate=new Date();lastDate.setDate(lastDate.getDate()-1);
+  const prevKey=`${lastDate.getFullYear()}-${to2(lastDate.getMonth()+1)}-${to2(lastDate.getDate())}`;
+  const streak=(getLastClaimDate()===prevKey)?getStreak()+1:1;
+  setStreak(streak);
+
+  // Random quote
+  const quote=QUOTES[Math.floor(Math.random()*QUOTES.length)];
+  document.getElementById('quoteBox').textContent=quote;
+
+  updateUI();
+  document.getElementById('expTotal').animate([{transform:'scale(1)'},{transform:'scale(1.1)'},{transform:'scale(1)'}],{duration:400,easing:'ease-out'});
+}
+
+// ===== Midnight reset =====
+function scheduleMidnightReset(){setTimeout(()=>{updateUI();scheduleMidnightReset();},msUntilMidnight()+1000);}
+
+// ===== Welcome overlay fade =====
+document.addEventListener('DOMContentLoaded',()=>{
+  startClock();
+  updateVisitorCount();
+  updateUI();
+  scheduleMidnightReset();
+  
+  // Welcome fade
+  const overlay=document.getElementById('welcomeOverlay');
+  setTimeout(()=>{overlay.style.animation='fadeOut 1s forwards';setTimeout(()=>overlay.remove(),1000);},2500);
+
+  // Claim button
+  document.getElementById('claimBtn').addEventListener('click',claimToday);
+
+  // Suggestion submit
+  document.getElementById('submitSuggestion').addEventListener('click',()=>{
+    const val=document.getElementById('suggestionInput').value.trim();
+    if(val){addSuggestion(val);document.getElementById('suggestionInput').value='';updateUI();}
+  });
+
+  document.getElementById('year').textContent=new Date().getFullYear();
+});
+</script>
+</body>
+</html>
